@@ -4,7 +4,10 @@
 
 El proyecto contiene:
 
-1. Ejemplo de api de diarios
+1. Ejemplo CRUD de api de diarios
+2. Utility types (interfaces y enums)
+3. Implementación y configuración de ESlint y Prettier
+4. Configuración de scripts en package.json
 
 Para instalar las dependencias use:
 ```
