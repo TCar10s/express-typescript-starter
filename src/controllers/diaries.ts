@@ -1,14 +1,14 @@
 import { Response, Request } from 'express';
-import * as diaryServices from '../services/diary';
+import * as diaryService from '../services/diary';
 import { NewDiaryEntry } from '../types/diary.interfaces';
 import toNewDiaryEntry from '../utils/diaries.validation';
 
 const getAllDiaries = (_req: Request, res: Response) => {
-  return res.status(200).json(diaryServices.getEntriesWithOutSensitiveInfo());
+  return res.status(200).json(diaryService.getEntriesWithOutSensitiveInfo());
 };
 
 const getDiaryById = (req: Request, res: Response) => {
-  const diary = diaryServices.findById(+req.params.id);
+  const diary = diaryService.findById(+req.params.id);
 
   return diary ? res.send(diary) : res.redirect('https://http.cat/404');
 };
@@ -18,7 +18,7 @@ const addDiary = (req: Request, res: Response) => {
     const newDiaryEntry = toNewDiaryEntry(req.body);
 
     const addedDiaryEntry: NewDiaryEntry =
-      diaryServices.addEntry(newDiaryEntry);
+      diaryService.addEntry(newDiaryEntry);
 
     res.status(201).send(addedDiaryEntry);
   } catch (error: any) {
@@ -30,7 +30,7 @@ const deleteDiary = (req: Request, res: Response) => {
   try {
     const id = +req.params.id;
 
-    diaryServices.deleteEntry(id);
+    diaryService.deleteEntry(id);
 
     res.status(200).send(`Diary entry with id ${id} deleted`);
   } catch (error: any) {
@@ -43,13 +43,13 @@ const updateDiary = (req: Request, res: Response) => {
     const id = +req.params.id;
     const updatedDiaryEntry = toNewDiaryEntry(req.body);
 
-    const diary = diaryServices.findById(id);
+    const diary = diaryService.findById(id);
 
     if (!diary) {
       return res.status(404).send('No diary entry found');
     }
 
-    const updatedDiary = diaryServices.updateEntry(id, updatedDiaryEntry);
+    const updatedDiary = diaryService.updateEntry(id, updatedDiaryEntry);
 
     return res
       .status(200)

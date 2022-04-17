@@ -1,35 +1,49 @@
 # Proyecto base para la creación de API Rest con TypeScript
 
->💡 Pesando para proyectos de pequeña escala (**folder-by-type**).
+> 💡 Pesando para proyectos de pequeña escala (**folder-by-type**).
 
-El proyecto contiene:
+Features:
 
-1. Ejemplo CRUD de api de diarios
-2. Layer architecture (folder-by-type)
-3. Utility types (interfaces y enums)
-4. Implementación y configuración de ESlint y Prettier
-5. Configuración de scripts en package.json
+- Ejemplo CRUD de api de diarios
+- Layer architecture (folder-by-type)
+- Implementación y configuración de Jest (Unit Tests)
+- Utility types (interfaces y enums)
+- Implementación y configuración de ESlint y Prettier
+- Configuración de scripts en package.json
 
-Para instalar las dependencias use:
+## Correr la App
 
 ```
+#Instalar las dependencias
 npm install
-```
 
-Para correr el proyecto use:
-
-```
+#Correr el proyecto en puerto 3000
 npm run dev
-```
 
-Para generar el build use:
-
-```
+#Generar el build
 npm run tsc
-```
 
-Para correr el build generado use:
-
-```
+#Correr el build generado
 npm run start
+```
+
+## Test
+
+```
+#Ejecutar los tests unitarios use:
+npm run test
+```
+
+Linting:
+
+```
+#Ejecutar el linter use:
+npm run lint:check
+
+# Para realizar correcciones
+npm run lint:fix
+```
+
+```
+
 ```

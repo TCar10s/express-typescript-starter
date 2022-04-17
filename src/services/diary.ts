@@ -3,7 +3,7 @@ import {
   NewDiaryEntry,
   NonSensitiveInfoDiaryEntry,
 } from '../types/diary.interfaces';
-import diaryData from './data/diaries.json';
+import diaryData from '../../data/diaries.json';
 
 const diaries: DiaryEntry[] = diaryData as DiaryEntry[];
 
