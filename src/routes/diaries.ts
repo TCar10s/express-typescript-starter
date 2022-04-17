@@ -1,12 +1,12 @@
 import express from 'express';
-import diaryService from '../controllers/diaries';
+import diaryController from '../controllers/diaries';
 
 const router = express.Router();
 
-router.get('/', diaryService.getAllDiaries);
-router.get('/:id', diaryService.getDiaryById);
-router.post('/', diaryService.addDiary);
-router.delete('/:id', diaryService.deleteDiary);
-router.put('/:id', diaryService.updateDiary);
+router.get('/', diaryController.getAllDiaries);
+router.get('/:id', diaryController.getDiaryById);
+router.post('/', diaryController.addDiary);
+router.delete('/:id', diaryController.deleteDiary);
+router.put('/:id', diaryController.updateDiary);
 
 export default router;

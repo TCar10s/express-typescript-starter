@@ -1,15 +1,7 @@
-import express from 'express'; // ESModules
-//const express = require('express'); -> CommonJS
+import { Server } from './classes/server';
+import dotEnv from 'dotenv';
 
-import diaryRouter from './routes/diaries';
+dotEnv.config();
 
-const app = express();
-app.use(express.json()); // Middleware for tranform req.body to json.
-
-const PORT = 3000;
-
-app.use('/api/diaries', diaryRouter);
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+const server = new Server();
+server.start();

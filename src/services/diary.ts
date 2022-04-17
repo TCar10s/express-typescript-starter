@@ -3,7 +3,7 @@ import {
   NewDiaryEntry,
   NonSensitiveInfoDiaryEntry,
 } from '../types/diary.interfaces';
-import diaryData from '../data/diaries.json';
+import diaryData from './data/diaries.json';
 
 const diaries: DiaryEntry[] = diaryData as DiaryEntry[];
 
@@ -49,7 +49,10 @@ export const deleteEntry = (id: number): void => {
   }
 };
 
-export const updateEntry = (id: number, newDiaryEntry: NewDiaryEntry): NewDiaryEntry => {
+export const updateEntry = (
+  id: number,
+  newDiaryEntry: NewDiaryEntry
+): NewDiaryEntry => {
   const index = diaries.findIndex((d) => d.id === id);
 
   if (index > -1) {
@@ -58,6 +61,6 @@ export const updateEntry = (id: number, newDiaryEntry: NewDiaryEntry): NewDiaryE
       ...newDiaryEntry,
     };
   }
-  
+
   return diaries[index];
 };

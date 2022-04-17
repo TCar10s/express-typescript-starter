@@ -1,7 +1,7 @@
 import { Response, Request } from 'express';
-import * as diaryServices from '../services/diaryServices';
+import * as diaryServices from '../services/diary';
 import { NewDiaryEntry } from '../types/diary.interfaces';
-import toNewDiaryEntry from '../utils';
+import toNewDiaryEntry from '../utils/diaries.validation';
 
 const getAllDiaries = (_req: Request, res: Response) => {
   return res.status(200).json(diaryServices.getEntriesWithOutSensitiveInfo());
