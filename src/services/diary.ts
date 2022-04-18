@@ -13,7 +13,7 @@ export const findById = (
   id: number
 ): NonSensitiveInfoDiaryEntry | undefined => {
   const entry = diaries.find((d) => d.id === id);
-
+  
   if (entry) {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { comment, ...rest } = entry;

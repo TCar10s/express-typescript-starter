@@ -5,6 +5,7 @@
 Features:
 
 - Ejemplo CRUD de api de diarios
+- Validación de datos con express-validator
 - Layer architecture (folder-by-type)
 - Implementación y configuración de Jest (Unit Tests)
 - Utility types (interfaces y enums)
@@ -42,8 +43,4 @@ npm run lint:check
 
 # Para realizar correcciones
 npm run lint:fix
-```
-
-```
-
 ```
