@@ -35,7 +35,7 @@ npm run start
 npm run test
 ```
 
-Linting:
+## Linting:
 
 ```
 #Ejecutar el linter use:
